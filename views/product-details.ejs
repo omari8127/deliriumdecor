@@ -1,0 +1,18 @@
+﻿<%- include('partials/header', { title: product.name }) %>
+
+<section class="details-layout">
+  <div class="details-image">
+    <img src="<%= product.image %>" alt="<%= product.name %>" />
+  </div>
+  <div class="details-content">
+    <h1><%= product.name %></h1>
+    <p class="price">$<%= Number(product.price).toFixed(2) %></p>
+    <% if (product.category) { %>
+      <p class="chip"><%= product.category %></p>
+    <% } %>
+    <p><%= product.description %></p>
+    <a class="btn" href="mailto:orders@deliriumdecor.com?subject=Order Inquiry: <%= encodeURIComponent(product.name) %>">Contact / Order</a>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

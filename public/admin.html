@@ -1,0 +1,90 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panel de administracion | Delirium Decor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body data-page="admin">
+  <header class="site-header">
+    <a class="brand" href="/index.html">
+      <img class="brand-logo" src="/images/logo-delirium.png" alt="Logo Delirium Decor" />
+      <span>Delirium Decor</span>
+    </a>
+    <nav class="nav-links">
+      <a href="/index.html">Inicio</a>
+      <a href="/catalog.html">Catalogo</a>
+      <a href="/about.html">Acerca de</a>
+      <a href="/contact.html">Contacto</a>
+      <a href="/login" class="nav-login-icon" aria-label="Iniciar sesion de administrador" title="Iniciar sesion">
+        <img src="/images/login-icon.svg" alt="Iniciar sesion" />
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="panel spacing-lg">
+      <div class="admin-topbar">
+        <h1>Panel de administracion</h1>
+        <button id="logoutBtn" class="btn btn-outline" type="button">Cerrar sesion</button>
+      </div>
+      <p class="small">Gestiona tu catalogo de productos.</p>
+    </section>
+
+    <section class="panel spacing-lg">
+      <h2 id="formTitle">Agregar producto</h2>
+      <form id="adminProductForm" class="stack-md" enctype="multipart/form-data">
+        <input type="hidden" id="editProductId" />
+        <div class="form-grid">
+          <input name="name" placeholder="Nombre del producto" required />
+          <input name="price" type="number" min="0" step="0.01" placeholder="Precio" required />
+          <select name="category" required>
+            <option value="mugs">Mugs</option>
+            <option value="cups">Tazas</option>
+            <option value="decor">Decoracion</option>
+          </select>
+          <input name="image" type="file" accept="image/*" />
+        </div>
+        <textarea name="description" rows="4" placeholder="Descripcion" required></textarea>
+        <div class="inline-actions">
+          <button class="btn" type="submit" id="saveBtn">Agregar producto</button>
+          <button class="btn btn-outline hidden" type="button" id="cancelEditBtn">Cancelar edicion</button>
+        </div>
+      </form>
+      <p id="adminMessage" class="small"></p>
+    </section>
+
+    <section class="panel">
+      <h2>Gestion de productos</h2>
+      <div class="table-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Imagen</th>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Categoria</th>
+              <th>Editar</th>
+              <th>Eliminar</th>
+            </tr>
+          </thead>
+          <tbody id="adminTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="siteFooter"></footer>
+  <script src="/script.js"></script>
+</body>
+</html>
+
+
+
+
+
+

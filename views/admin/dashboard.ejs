@@ -1,0 +1,75 @@
+﻿<%- include('../partials/header', { title: 'Admin Dashboard' }) %>
+
+<section class="admin-head">
+  <h1>Admin Dashboard</h1>
+  <a href="/admin/logout" class="btn ghost">Logout</a>
+</section>
+
+<section class="admin-panel">
+  <h2>Add New Product</h2>
+  <% if (error) { %><p class="error"><%= error %></p><% } %>
+  <form class="admin-form" action="/admin/products" method="POST" enctype="multipart/form-data">
+    <label>Name *</label>
+    <input type="text" name="name" value="<%= formData.name || '' %>" required />
+
+    <label>Price (USD) *</label>
+    <input type="number" min="0" step="0.01" name="price" value="<%= formData.price || '' %>" required />
+
+    <label>Category</label>
+    <select name="category">
+      <option value="">Select category</option>
+      <option value="mugs" <%= formData.category === 'mugs' ? 'selected' : '' %>>Mugs</option>
+      <option value="cups" <%= formData.category === 'cups' ? 'selected' : '' %>>Cups</option>
+      <option value="decor" <%= formData.category === 'decor' ? 'selected' : '' %>>Decor</option>
+    </select>
+
+    <label>Short Description *</label>
+    <input type="text" name="shortDescription" value="<%= formData.shortDescription || '' %>" required />
+
+    <label>Description *</label>
+    <textarea name="description" rows="4" required><%= formData.description || '' %></textarea>
+
+    <label>Product Image</label>
+    <input type="file" name="image" accept="image/*" />
+
+    <button class="btn" type="submit">Add Product</button>
+  </form>
+</section>
+
+<section class="admin-panel">
+  <h2>Current Products</h2>
+  <div class="admin-table-wrap">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Category</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (!products.length) { %>
+          <tr><td colspan="5">No products found.</td></tr>
+        <% } %>
+        <% products.forEach((product) => { %>
+          <tr>
+            <td><img class="thumb" src="<%= product.image %>" alt="<%= product.name %>" /></td>
+            <td><%= product.name %></td>
+            <td>$<%= Number(product.price).toFixed(2) %></td>
+            <td><%= product.category || '-' %></td>
+            <td class="actions">
+              <a href="/admin/products/<%= product.id %>/edit" class="btn small">Edit</a>
+              <form action="/admin/products/<%= product.id %>/delete" method="POST" onsubmit="return confirm('Delete this product?')">
+                <button type="submit" class="btn danger small">Delete</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

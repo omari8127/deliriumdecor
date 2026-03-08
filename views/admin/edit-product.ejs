@@ -1,0 +1,39 @@
+﻿<%- include('../partials/header', { title: 'Edit Product' }) %>
+
+<section class="admin-panel narrow">
+  <h1>Edit Product</h1>
+  <% if (error) { %><p class="error"><%= error %></p><% } %>
+  <form class="admin-form" action="/admin/products/<%= product.id %>/edit" method="POST" enctype="multipart/form-data">
+    <label>Name *</label>
+    <input type="text" name="name" value="<%= product.name %>" required />
+
+    <label>Price (USD) *</label>
+    <input type="number" min="0" step="0.01" name="price" value="<%= product.price %>" required />
+
+    <label>Category</label>
+    <select name="category">
+      <option value="" <%= !product.category ? 'selected' : '' %>>Select category</option>
+      <option value="mugs" <%= product.category === 'mugs' ? 'selected' : '' %>>Mugs</option>
+      <option value="cups" <%= product.category === 'cups' ? 'selected' : '' %>>Cups</option>
+      <option value="decor" <%= product.category === 'decor' ? 'selected' : '' %>>Decor</option>
+    </select>
+
+    <label>Short Description *</label>
+    <input type="text" name="shortDescription" value="<%= product.shortDescription %>" required />
+
+    <label>Description *</label>
+    <textarea name="description" rows="4" required><%= product.description %></textarea>
+
+    <label>Replace Image</label>
+    <input type="file" name="image" accept="image/*" />
+
+    <img class="preview" src="<%= product.image %>" alt="<%= product.name %>" />
+
+    <div class="action-row">
+      <button class="btn" type="submit">Save Changes</button>
+      <a href="/admin" class="btn ghost">Back</a>
+    </div>
+  </form>
+</section>
+
+<%- include('../partials/footer') %>

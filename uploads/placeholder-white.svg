@@ -1,0 +1,6 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+  <rect width="600" height="600" fill="#fffaf5"/>
+  <rect x="190" y="170" width="220" height="210" rx="24" fill="#ffffff" stroke="#ece3d9"/>
+  <circle cx="430" cy="260" r="40" fill="none" stroke="#ece3d9" stroke-width="15"/>
+  <text x="50%" y="82%" text-anchor="middle" font-size="34" font-family="Arial" fill="#8f8477">Delirium Decor</text>
+</svg>

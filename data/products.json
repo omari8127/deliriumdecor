@@ -1,0 +1,32 @@
+﻿[
+  {
+    "id": "sample-1",
+    "name": "Floral Accent Mug",
+    "price": 24.99,
+    "shortDescription": "Hand-painted ceramic mug with a soft floral pattern.",
+    "description": "A handmade ceramic mug designed for daily use and display. Each piece has unique brushwork and a glossy finish.",
+    "category": "mugs",
+    "image": "/uploads/default-product.svg",
+    "createdAt": "2026-03-07T00:00:00.000Z"
+  },
+  {
+    "id": "sample-2",
+    "name": "Minimalist Cup Set",
+    "price": 32.5,
+    "shortDescription": "Set of two decorative cups with matte glaze.",
+    "description": "A modern two-piece cup set with a smooth matte texture, ideal for coffee corners and gift setups.",
+    "category": "cups",
+    "image": "/uploads/default-product.svg",
+    "createdAt": "2026-03-07T00:00:00.000Z"
+  },
+  {
+    "id": "sample-3",
+    "name": "Tabletop Decor Vase",
+    "price": 28,
+    "shortDescription": "Small sculpted decor vase for shelves and desks.",
+    "description": "A compact decor piece that adds character to small spaces. Pairs well with dried flowers or as a standalone accent.",
+    "category": "decor",
+    "image": "/uploads/default-product.svg",
+    "createdAt": "2026-03-07T00:00:00.000Z"
+  }
+]

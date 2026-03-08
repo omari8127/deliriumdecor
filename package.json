@@ -1,0 +1,24 @@
+{
+  "name": "delirium-decor",
+  "version": "1.0.0",
+  "description": "Small business catalog website for Delirium Decor",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "decor",
+    "express",
+    "catalog"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.19.0",
+    "multer": "^2.0.2"
+  }
+}

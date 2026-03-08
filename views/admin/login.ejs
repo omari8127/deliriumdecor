@@ -1,0 +1,15 @@
+﻿<%- include('../partials/header', { title: 'Admin Login' }) %>
+
+<section class="admin-auth">
+  <h1>Admin Login</h1>
+  <p>Use your admin password to manage the catalog.</p>
+  <% if (error) { %><p class="error"><%= error %></p><% } %>
+  <form method="POST" action="/admin/login" class="admin-form">
+    <label for="password">Password</label>
+    <input id="password" type="password" name="password" required />
+    <button class="btn" type="submit">Login</button>
+  </form>
+  <p class="note">Default password: <code>admin123</code> (set <code>ADMIN_PASSWORD</code> env var in production).</p>
+</section>
+
+<%- include('../partials/footer') %>

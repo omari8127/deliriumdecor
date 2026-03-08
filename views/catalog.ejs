@@ -1,0 +1,26 @@
+﻿<%- include('partials/header', { title: 'Catalog' }) %>
+
+<section class="page-heading">
+  <h1>Product Catalog</h1>
+  <p>Find your next favorite mug, cup, or decor accent.</p>
+</section>
+
+<section class="product-grid">
+  <% if (products.length === 0) { %>
+    <p class="empty">No products available yet.</p>
+  <% } %>
+
+  <% products.forEach((product) => { %>
+    <article class="product-card reveal">
+      <img src="<%= product.image %>" alt="<%= product.name %>" />
+      <div class="card-body">
+        <h2><%= product.name %></h2>
+        <p class="price">$<%= Number(product.price).toFixed(2) %></p>
+        <p><%= product.shortDescription %></p>
+        <a class="btn small" href="/products/<%= product.id %>">View details</a>
+      </div>
+    </article>
+  <% }) %>
+</section>
+
+<%- include('partials/footer') %>

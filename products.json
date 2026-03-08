@@ -1,0 +1,34 @@
+[
+  {
+    "id": "p-1001",
+    "name": "Updated Name",
+    "price": 24.99,
+    "description": "Hand-painted ceramic mug with floral accents and a smooth matte finish.",
+    "category": "mugs",
+    "image": "/uploads/placeholder-mug.svg"
+  },
+  {
+    "id": "p-1002",
+    "name": "Vintage Coffee Cup",
+    "price": 19.5,
+    "description": "Classic coffee cup inspired by vintage European café style.",
+    "category": "cups",
+    "image": "/uploads/placeholder-cup.svg"
+  },
+  {
+    "id": "p-1003",
+    "name": "Minimalist White Mug",
+    "price": 22,
+    "description": "Elegant white mug with minimalist silhouette for modern interiors.",
+    "category": "mugs",
+    "image": "/uploads/placeholder-white.svg"
+  },
+  {
+    "id": "1772927931507",
+    "name": "Auth Test",
+    "price": 10,
+    "description": "Secured",
+    "category": "mugs",
+    "image": "/uploads/placeholder-mug.svg"
+  }
+]
